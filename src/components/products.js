@@ -1,62 +1,66 @@
+import appleImage from "../images/apple.jpg";
+import bananaImage from "../images/banana.jpg";
+import orangeImage from "../images/orange.jpg";
+import strawberryImage from "../images/strawberry.jpg";
+import pineappleImage from "../images/pineapple.jpg";
+import watermelonImage from "../images/watermelon.jpg";
+import grapesImage from "../images/grapes.jpg";
+import mangoImage from "../images/mango.jpg";
+import kiwiImage from "../images/kiwi.jpg";
+
 const products = [
   {
     id: 1,
     name: "Apple",
-    image: "images/apple.jpg",
+    image: appleImage,
     price: 1.99,
   },
   {
     id: 2,
     name: "Banana",
-    image: "images/banana.jpg",
+    image: bananaImage,
     price: 0.99,
   },
   {
     id: 3,
     name: "Orange",
-    image: "images/orange.jpg",
+    image: orangeImage,
     price: 2.49,
   },
   {
     id: 4,
     name: "Strawberry",
-    image: "images/strawberry.jpg",
+    image: strawberryImage,
     price: 3.99,
-  },
-  {
-    id: 5,
-    name: "Blueberry",
-    image: "images/blueberry.jpg",
-    price: 4.49,
   },
   {
     id: 6,
     name: "Pineapple",
-    image: "images/pineapple.jpg",
+    image: pineappleImage,
     price: 2.99,
   },
   {
     id: 7,
     name: "Watermelon",
-    image: "images/watermelon.jpg",
+    image: watermelonImage,
     price: 6.99,
   },
   {
     id: 8,
     name: "Grapes",
-    image: "images/grapes.jpg",
+    image: grapesImage,
     price: 2.99,
   },
   {
     id: 9,
     name: "Mango",
-    image: "images/mango.jpg",
+    image: mangoImage,
     price: 3.99,
   },
   {
     id: 10,
     name: "Kiwi",
-    image: "images/kiwi.jpg",
+    image: kiwiImage,
     price: 1.49,
   },
 ];
