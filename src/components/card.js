@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Card(props) {
-  const { name, image, price } = props;
+  const { id, name, image, price, onAddToCart } = props;
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityIncrement = () => {
@@ -15,7 +15,14 @@ function Card(props) {
   };
 
   const handleAddToCart = () => {
-    // logic for adding product to cart
+    const product = {
+      id,
+      name,
+      image,
+      price,
+      quantity,
+    };
+    onAddToCart(product);
   };
 
   return (
