@@ -10,7 +10,7 @@ function CartBox({ items, onRemoveFromCart }) {
 
   return (
     <div className="cart">
-      <h2>Cart</h2>
+      <h2>Your Shopping Cart</h2>
       <ul>
         {items.map((item) => (
           <li key={item.id}>

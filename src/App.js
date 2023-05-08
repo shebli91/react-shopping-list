@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import ProductList from "./components/ProductList";
 import CartBox from "./components/CartBox";
+import CartCheckoutForm from "./components/CartCheckoutForm";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -26,6 +27,36 @@ function App() {
     setCartItems(updatedCartItems);
   }
 
+  function checkout(purchaseInfo) {
+    const { customerName, customerEmail } = purchaseInfo;
+    const totalPrice = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    const purchasedItems = cartItems
+      .map((item) => {
+        return `${item.name} (x${item.quantity}) - $${
+          item.price * item.quantity
+        }`;
+      })
+      .join("\n");
+
+    // Simulate a purchase by waiting for 2 seconds before showing a thank you message
+    const message = `Dear ${customerName}, thank you for your purchase!
+    
+    You have purchased:
+    ${purchasedItems}
+    
+    Total price: $${totalPrice}
+    
+    We will send you a copy of your order at: ${customerEmail}`;
+    setTimeout(() => {
+      alert(message);
+    }, 1000);
+
+    setCartItems([]);
+  }
+
   return (
     <div className="App">
       <ProductList onAddToCart={addToCart} />
@@ -34,7 +65,9 @@ function App() {
         <div className="item-list-container">
           <CartBox items={cartItems} onRemoveFromCart={onRemoveFromCart} />
         </div>
-        <div className="checkout-container"></div>
+        <div className="checkout-container">
+          <CartCheckoutForm onCheckout={checkout} />
+        </div>
       </div>
     </div>
   );
